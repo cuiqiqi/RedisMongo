@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Redis练习</title>
+</head>
+<body>
+
+<div style="text-align:center">
+
+    <h3>Redis验证码限制练习</h3>
+    <p><label> 请输入邮箱 : <input type="text" id="phone" /></label></p>
+    <button onclick="send()">发送验证码</button>
+    <p><label>请输入验证码: <input id="sms" type="text" name="sms"/></label></p>
+    <div><span th:text="${bbb}" style="color: red"></span></div>
+    <div><button onclick="aaa()">登录</button></div>
+</div>
+    <script>
+        function send() {
+            var phone = document.getElementById("phone").value;
+            window.location.href="/code1/"+phone;
+        }
+
+        function aaa() {
+            var num = document.getElementById("sms").value;
+            window.location.href="/index/"+num;
+        }
+    </script>
+</body>
+</html>
